@@ -9,8 +9,7 @@ app.get('/', function (req, res) {
 })
 
 app.post('/', function (req, res) {
-  console.log(req.body)
-  res.send('Hello World!')
+  res.json(res.body)
 })
 
 app.listen(port, function () {
