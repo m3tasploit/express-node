@@ -1,3 +1,3 @@
 # express-node
 
-### A express node api template
+### An express node api template
