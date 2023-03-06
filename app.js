@@ -9,7 +9,7 @@ app.get('/', function (req, res) {
 })
 
 app.post('/', function (req, res) {
-  res.json(res.body)
+  res.json(req.body)
 })
 
 app.listen(port, function () {
