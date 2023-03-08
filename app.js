@@ -10,6 +10,9 @@ app.get('/', function (req, res) {
 
 app.post('/', function (req, res) {
   const {polygonCoords, point} = req.body;
+  if(!(polygonCoords && point)){
+    res.json({message:"please provide, polygonCoords : [cords], point : [lat,long]"});
+  }
   if(!(polygonCoords.length >= 3 && point.length === 2 )){
     res.json({message:"please provide, polygonCoords : [cords], point : [lat,long]"});
   }
