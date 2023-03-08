@@ -11,17 +11,17 @@ app.get('/', function (req, res) {
 app.post('/', function (req, res) {
   const {polygonCoords, point} = req.body;
   if(!(polygonCoords && point)){
-    res.json({message:"please provide, polygonCoords : [cords], point : [lat,long]"});
+    return res.json({message:"please provide, polygonCoords : [cords], point : [lat,long]"});
   }
   if(!(polygonCoords.length >= 3 && point.length === 2 )){
-    res.json({message:"please provide, polygonCoords : [cords], point : [lat,long]"});
+    return res.json({message:"please provide, polygonCoords : [cords], point : [lat,long]"});
   }
   const polygon = turf.polygon([polygonCoords]);
 
   if (turf.booleanPointInPolygon(point, polygon)) {
-    res.json({message:"The point is inside the polygon"});
+    return res.json({message:"The point is inside the polygon"});
   } else {
-    res.json({message:"The point is outside the polygon"});
+    return res.json({message:"The point is outside the polygon"});
   }
   
 })
