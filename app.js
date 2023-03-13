@@ -27,6 +27,11 @@ app.post('/', function (req, res) {
   
 })
 
+app.post('/api', function (req, res) {
+  console.log(req.body, "body ends here")
+  return res.json({});
+})
+
 app.listen(port, function () {
   console.log('Listening on port 3000...')
 })
