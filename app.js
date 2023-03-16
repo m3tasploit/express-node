@@ -28,7 +28,7 @@ app.post('/', function (req, res) {
 })
 
 app.post('/api', function (req, res) {
-  console.log(req.body.labels, "labels")
+  console.log(req.body.commonLabels, "labels")
   console.log(req.body, "body ends here")
   return res.json({});
 })
